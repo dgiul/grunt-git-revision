@@ -13,14 +13,15 @@ module.exports = function(grunt) {
     var options = this.options({
       property: 'meta.revision',
       ref: 'HEAD',
-      short: true
+      short: true,
+      dir: './'
     });
 
     var done = this.async();
 
     grunt.util.spawn({
       cmd: 'git',
-      args: ['rev-parse', options.short && '--short', options.ref].filter(Boolean)
+      args: ['-C', options.dir, 'rev-parse', options.short && '--short', options.ref].filter(Boolean)
     }, function(err, result) {
       if (err) {
         grunt.log.error(err);

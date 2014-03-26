@@ -54,6 +54,12 @@ Default value: `true`
 
 Fetch short revision (e.g 5b8348d) or the full revision (5b8348de6b492ca79e732b1902c489332c8d64fb)
 
+#### options.dir
+Type: `String`
+Default value: `'./'`
+
+Let's you specify a custom directory in case the working copy you want to access is not the same one your Gruntfile is in.
+
 ### Usage Examples
 
 ```js
